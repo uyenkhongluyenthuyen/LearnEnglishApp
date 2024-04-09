@@ -4,15 +4,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.learnenglishapp.Interface.IClickItemTuVungListener;
+import com.example.learnenglishapp.MainActivity;
 import com.example.learnenglishapp.R;
 import com.example.learnenglishapp.adapter.TuVungAdapter;
 import com.example.learnenglishapp.model.TuVung;
@@ -73,6 +76,13 @@ public class HocTuVungActivity extends AppCompatActivity {
         c.close();
         tuVungAdapter.notifyDataSetChanged();
 
+        imgBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HocTuVungActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void anhxa() {

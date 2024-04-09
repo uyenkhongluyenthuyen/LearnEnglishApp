@@ -1,57 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-    <androidx.cardview.widget.CardView
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="190dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginBottom="10dp"
+    android:clickable="true"
+    app:cardCornerRadius="25dp">
 
-        android:layout_width="190dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginBottom="10dp"
-        android:clickable="true"
-        app:cardCornerRadius="25dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="5">
 
-        <LinearLayout
+
+        <ImageView
+            android:id="@+id/imgHinh"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:weightSum="5">
+            android:layout_height="150dp"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:src="@drawable/cloud"></ImageView>
 
+        <TextView
+            android:id="@+id/tvTuTA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Từ Vựng"
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
-            <ImageView
-                android:id="@+id/imgHinh"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:src="@drawable/cloud"></ImageView>
+        <TextView
+            android:id="@+id/tvNghiaTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Dịch Nghĩa"
+            android:textSize="15sp" />
 
-            <TextView
-                android:id="@+id/tvTuTA"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Từ Vựng"
-                android:textStyle="bold"
-                android:textSize="15sp" />
+    </LinearLayout>
 
-            <TextView
-                android:id="@+id/tvNghiaTV"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Dịch Nghĩa"
-                android:textSize="15sp" />
-
-        </LinearLayout>
-
-
-    </androidx.cardview.widget.CardView>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

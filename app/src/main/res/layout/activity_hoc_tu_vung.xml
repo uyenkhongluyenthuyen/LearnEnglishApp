@@ -8,47 +8,46 @@
     android:background="@drawable/bg_dstuvung"
     tools:context=".activity.HocTuVungActivity">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="32dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="13dp"
-            android:layout_marginLeft="13dp"
-            android:layout_toEndOf="@+id/imgVBackDSTV"
-            android:layout_toRightOf="@+id/imgVBackDSTV"
-            android:text="Từ Vựng"
-            android:textColor="#FFFFFF"
-            android:textSize="30sp"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/imgVBackDSTV"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/ic_back"
-            android:tint="@color/cardview_dark_background"
-            tools:ignore="UseAppTint" />
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="80dp"
+       android:layout_weight="1"
+       >
+       <ImageView
+           android:id="@+id/imgVBackDSTV"
+           android:layout_width="40dp"
+           android:layout_height="40dp"
+           android:src="@drawable/ic_back"
+           android:tint="@color/cardview_dark_background"
+           tools:ignore="UseAppTint" />
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginStart="13dp"
+           android:layout_marginLeft="13dp"
+           android:layout_toEndOf="@+id/imgVBackDSTV"
+           android:layout_toRightOf="@+id/imgVBackDSTV"
+           android:text="Từ Vựng"
+           android:textColor="#FFFFFF"
+           android:textSize="30sp"
+           android:textStyle="bold" />
 
 
-    </RelativeLayout>
+
+   </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcvTuVung"
         android:layout_width="match_parent"
-        android:layout_height="700dp">
+        android:layout_height="match_parent"
+        android:layout_weight="8">
 
     </androidx.recyclerview.widget.RecyclerView>
 
     <Button
         android:id="@+id/btnOnTap"
-        android:layout_width="280dp"
-        android:layout_height="106dp"
+        android:layout_width="wrap_content"
+        android:layout_height="75dp"
         android:layout_gravity="center"
         android:layout_marginTop="0dp"
         android:layout_weight="1"
