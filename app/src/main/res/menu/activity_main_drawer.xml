@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_main"
+            android:title="@string/menu_home" />
+
+    </group>
+    <item android:title="Học Tập">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item android:title="Học từ vựng"
+                    android:id="@+id/nav_learnWord"
+                    android:icon="@drawable/baseline_font_download_24"/>
+
+                <item android:title="Thêm từ vựng"
+                    android:id="@+id/nav_addWord"
+                    android:icon="@drawable/ic_postadd"/>
+
+            </group>
+        </menu>
+    </item>
+    <item android:title="Bài Kiểm Tra">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item android:title="Trắc nghiệm"
+                    android:id="@+id/nav_test"
+                    android:icon="@drawable/ic_baseline_find_in_page_24"></item>
+                <item android:title="Điền Khuyết"
+                    android:id="@+id/nav_fill"
+                    android:icon="@drawable/ic_spacefill"></item>
+                <item android:title="Sắp Xếp Câu"
+                    android:id="@+id/nav_sort"
+                    android:icon="@drawable/ic_order"></item>
+
+            </group>
+        </menu>
+    </item>
+    <item android:title="Tài Khoản">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item android:title="Thông Tin Tài Khoản"
+                    android:icon="@drawable/ic_person"
+                    android:id="@+id/nav_user"
+                    ></item>
+
+                <item android:title="Đăng xuất"
+                    android:icon="@drawable/ic_logout"
+                    android:id="@+id/nav_logout"></item>
+            </group>
+        </menu>
+    </item>
+
+</menu>
