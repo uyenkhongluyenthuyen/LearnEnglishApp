@@ -7,9 +7,9 @@ public class TuVung {
     private String nghiaTV;
 
     private String tuLoai;
-    private byte[] hinhAnh;
+    private String hinhAnh;
 
-    public TuVung(int id, String tuTA, String phienAm, String nghiaTV, String tuLoai, byte[] hinhAnh) {
+    public TuVung(int id, String tuTA, String phienAm, String nghiaTV, String tuLoai, String hinhAnh) {
         this.id = id;
         this.tuTA = tuTA;
         this.phienAm = phienAm;
@@ -50,11 +50,11 @@ public class TuVung {
         this.phienAm = phienAm;
     }
 
-    public byte[] getHinhAnh() {
+    public String getHinhAnh() {
         return hinhAnh;
     }
 
-    public void setHinhAnh(byte[] hinhAnh) {
+    public void setHinhAnh(String hinhAnh) {
         this.hinhAnh = hinhAnh;
     }
 

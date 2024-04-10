@@ -1,16 +1,12 @@
 package com.example.learnenglishapp.adapter;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.icu.text.RelativeDateTimeFormatter;
-import android.util.Log;
+import android.content.Context;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,16 +14,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.learnenglishapp.Interface.IClickItemTuVungListener;
 import com.example.learnenglishapp.R;
-import com.example.learnenglishapp.activity.HocTuVungActivity;
 import com.example.learnenglishapp.model.TuVung;
 
-import java.io.File;
 import java.util.List;
 
 public class TuVungAdapter extends RecyclerView.Adapter<TuVungAdapter.TuVungViewHolder> {
 
     private List<TuVung> listTV;
     private IClickItemTuVungListener iClickItemTuVungListener;
+
+    Context context;
+
 
     public TuVungAdapter(List<TuVung> listTV, IClickItemTuVungListener iClickItemTuVungListener) {
         this.listTV = listTV;
@@ -38,6 +35,7 @@ public class TuVungAdapter extends RecyclerView.Adapter<TuVungAdapter.TuVungView
     @Override
     public TuVungViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.tuvung_item, parent, false);
+        context = parent.getContext();
         return new TuVungViewHolder(view);
 
     }
@@ -52,8 +50,8 @@ public class TuVungAdapter extends RecyclerView.Adapter<TuVungAdapter.TuVungView
         holder.tvNghiaTV.setText(tuVung.getNghiaTV());
 //        Bitmap img= BitmapFactory.decodeByteArray(tuVung.getHinhAnh(),0,tuVung.getHinhAnh().length);
 //        holder.imgHinh.setImageBitmap(img);
-        holder.imgHinh.setImageResource(R.drawable.president);
-
+        int drawableResourceId = holder.itemView.getResources().getIdentifier(tuVung.getHinhAnh(), "drawable", holder.itemView.getContext().getPackageName());
+        Glide.with(context).load(drawableResourceId).into(holder.imgHinh);
 
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
