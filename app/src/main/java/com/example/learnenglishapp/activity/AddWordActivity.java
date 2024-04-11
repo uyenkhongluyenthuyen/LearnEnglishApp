@@ -46,6 +46,7 @@ public class AddWordActivity extends AppCompatActivity {
         // Gán adapter cho Spinner
         spinnerTuLoai.setAdapter(adapterTuLoai);
         event();
+
     }
 
     private void event() {

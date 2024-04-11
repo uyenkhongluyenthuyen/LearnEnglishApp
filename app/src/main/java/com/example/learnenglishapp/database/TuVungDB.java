@@ -84,6 +84,20 @@ public class TuVungDB extends SQLiteOpenHelper {
         db.close();
     }
 
+    public void updateWord(int id, TuVung tuVung){
+       SQLiteDatabase db = getWritableDatabase();
+       ContentValues value = new ContentValues();
+       value.put(Id, tuVung.getId());
+       value.put(Word, tuVung.getTuTA());
+       value.put(PhienAm, tuVung.getPhienAm());
+       value.put(Meaning, tuVung.getNghiaTV());
+       value.put(TuLoai, tuVung.getTuLoai());
+       value.put(Image, tuVung.getHinhAnh());
+       db.update(TableName, value, Id + "=?",
+               new String[]{String.valueOf(id)});
+       db.close();
+    }
+
     public void deleteWord(int id){
         SQLiteDatabase db = getWritableDatabase();
         String sql = "Delete From " + TableName + " Where ID=" +id;

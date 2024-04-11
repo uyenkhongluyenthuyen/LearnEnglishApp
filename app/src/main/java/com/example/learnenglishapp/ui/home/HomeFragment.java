@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.learnenglishapp.activity.AddWordActivity;
 import com.example.learnenglishapp.R;
 import com.example.learnenglishapp.activity.HocTuVungActivity;
+import com.example.learnenglishapp.activity.SapXepCauActivity;
 import com.example.learnenglishapp.activity.TracNghiemActivity;
 import com.example.learnenglishapp.databinding.FragmentHomeBinding;
 
@@ -56,6 +57,8 @@ public class HomeFragment extends Fragment {
         cardViewSapXepCau.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), SapXepCauActivity.class);
+                startActivity(intent);
 
             }
         });

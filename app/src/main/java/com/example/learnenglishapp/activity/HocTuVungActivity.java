@@ -57,6 +57,16 @@ public class HocTuVungActivity extends AppCompatActivity {
         tuVungAdapter = new TuVungAdapter(listTuVung, new IClickItemTuVungListener() {
             @Override
             public void onClickItemTuVung(TuVung tuVung) {
+                Intent  intent = new Intent(HocTuVungActivity.this, UpdateDeleteActivity.class);
+                Bundle b = new Bundle();
+                b.putInt("Id", tuVung.getId());
+                b.putString("Word", tuVung.getTuTA());
+                b.putString("Pronunciation", tuVung.getPhienAm());
+                b.putString("Meaning", tuVung.getNghiaTV());
+                b.putString("WordType", tuVung.getTuLoai());
+                b.putString("Image", tuVung.getHinhAnh());
+                intent.putExtras(b);
+                startActivityForResult(intent, 100);
 
             }
         });
