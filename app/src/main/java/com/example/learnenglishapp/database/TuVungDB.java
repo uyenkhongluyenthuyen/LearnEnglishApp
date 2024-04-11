@@ -29,7 +29,7 @@ public class TuVungDB extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        //tao cau sql de tao bang StudentTable
+        //tao cau sql de tao bang Table
         String sqlCreate = "Create table if not exists "+ TableName + "("
                 + Id + " Integer Primary key, "
                 + Word + " Text, "

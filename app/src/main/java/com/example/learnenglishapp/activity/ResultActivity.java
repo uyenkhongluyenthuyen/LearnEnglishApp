@@ -22,6 +22,13 @@ public class ResultActivity extends AppCompatActivity {
         setContentView(R.layout.activity_result);
         anhxa();
 
+        Intent intent = getIntent();
+        Bundle b = intent.getExtras();
+        if(b!=null){
+            tvQuestionTrue.setText(b.getString("QuestionTrue"));
+            tvPoint.setText(String.valueOf(b.getInt("Score")));
+        }
+
         btnReturn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -29,10 +36,7 @@ public class ResultActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-//        Intent intent = getIntent();
-//        Bundle b = intent.getExtras();
-//        tvQuestionTrue.setText(b.getString("QuestionTrue"));
-//        tvPoint.setText(b.getInt("Score"));
+
     }
 
     private void anhxa() {

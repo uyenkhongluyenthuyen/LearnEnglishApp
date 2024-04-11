@@ -146,9 +146,10 @@
             android:layout_marginTop="8dp"
             android:background="@drawable/button_1"
             android:fontFamily="@font/fredokaoneregular"
-            android:text="Next"
+
+            android:text="Confirm"
             android:textColor="@color/color_white"
-            app:backgroundTint="#F50000"></Button>
+            app:backgroundTint="#6EE608"></Button>
 
     </LinearLayout>
 

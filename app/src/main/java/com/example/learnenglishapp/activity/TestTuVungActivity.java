@@ -103,7 +103,7 @@ public class TestTuVungActivity extends AppCompatActivity {
                     Intent intent = new Intent(TestTuVungActivity.this, ResultActivity.class);
                     Bundle b = new Bundle();
                     b.putInt("Score", score);
-                    String questiontrue = String.valueOf(score/5 +listTuVung.size());
+                    String questiontrue = String.valueOf(score/5 +"/"+listTuVung.size());
                     b.putString("QuestionTrue", questiontrue);
                     intent.putExtras(b);
                     startActivity(intent);

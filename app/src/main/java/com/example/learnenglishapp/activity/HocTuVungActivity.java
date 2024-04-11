@@ -47,7 +47,7 @@ public class HocTuVungActivity extends AppCompatActivity {
         wordDb = new TuVungDB(this, "EnglishDatabase", null, 1);
         //them du lieu dau vao
         //addData();
-        wordDb.deleteWord(3);
+        //wordDb.deleteWord(3);
         //sử dung GridLayoutManager đẻ set up số cột cho layout của rcv
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
         rcvTuVung.setLayoutManager(gridLayoutManager);
