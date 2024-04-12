@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "651215312608",
+    "project_id": "signup-login-realtime-76071",
+    "storage_bucket": "signup-login-realtime-76071.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:651215312608:android:6520c3cf9225a6cd68e285",
+        "android_client_info": {
+          "package_name": "com.example.learnenglishapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCf8I8U9PD_BKCC9yMeG0fyDgFnDuSftsw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
