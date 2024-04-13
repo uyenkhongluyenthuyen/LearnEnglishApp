@@ -11,6 +11,39 @@
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
+    <activity
+        android:id="@+id/nav_learnWord"
+        android:name="com.example.learnenglishapp.activity.HocTuVungActivity"
+        tools:layout="@layout/activity_hoc_tu_vung"
+        >
+    </activity>
+
+    <activity
+        android:id="@+id/nav_addWord"
+        android:name="com.example.learnenglishapp.activity.AddWordActivity"
+        tools:layout="@layout/activity_add_word"/>
+    <activity
+        android:id="@+id/nav_fill"
+        android:name="com.example.learnenglishapp.activity.TestTuVungActivity"
+        tools:layout="@layout/activity_test_tu_vung"/>
+    <activity
+        android:id="@+id/nav_test"
+        android:name="com.example.learnenglishapp.activity.TracNghiemActivity"
+        tools:layout="@layout/activity_trac_nghiem"/>
+
+    <activity
+        android:id="@+id/nav_sort"
+        android:name="com.example.learnenglishapp.activity.SapXepCauActivity"
+        tools:layout="@layout/activity_sap_xep_cau"/>
+
+    <activity
+        android:id="@+id/nav_logout"
+        android:name="com.example.learnenglishapp.activity.LoginActivity"
+        tools:layout="@layout/activity_login"/>
+    <activity
+        android:id="@+id/nav_user"
+        android:name="com.example.learnenglishapp.activity.DetailAccoutActivity"
+        tools:layout="@layout/activity_detail_accout"/>
 
 
 </navigation>

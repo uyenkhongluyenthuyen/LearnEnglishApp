@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.learnenglishapp.MainActivity;
 import com.example.learnenglishapp.R;
@@ -20,13 +19,46 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.Objects;
-
 public class LoginActivity extends AppCompatActivity {
     private EditText edtUserName,edtPassWord;
     private Button btnLogin;
     private TextView tv_register;
+    public static String FULL_NAME;
+    public static String EMAIL;
+    public static String USERNAME;
+    public static String PASSWORD;
 
+    public static String getFullName() {
+        return FULL_NAME;
+    }
+
+    public static void setFullName(String fullName) {
+        FULL_NAME = fullName;
+    }
+
+    public static String getEMAIL() {
+        return EMAIL;
+    }
+
+    public static void setEMAIL(String EMAIL) {
+        LoginActivity.EMAIL = EMAIL;
+    }
+
+    public static String getUSERNAME() {
+        return USERNAME;
+    }
+
+    public static void setUSERNAME(String USERNAME) {
+        LoginActivity.USERNAME = USERNAME;
+    }
+
+    public static String getPASSWORD() {
+        return PASSWORD;
+    }
+
+    public static void setPASSWORD(String PASSWORD) {
+        LoginActivity.PASSWORD = PASSWORD;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +85,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+
     public  boolean validateUserName(){
         String username = edtUserName.getText().toString();
         if(username.isEmpty()){
@@ -86,17 +119,26 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.exists()){
-                    edtUserName.setError(null);
-                    String passwordFromDB = snapshot.child(userUsername).child("password").getValue(String.class);
+                    for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                        String passwordFromDB = dataSnapshot.child("password").getValue(String.class);
+                        String fullName = dataSnapshot.child("name").getValue(String.class);
+                        String email = dataSnapshot.child("mail").getValue(String.class);
 
-                    if(passwordFromDB.equals(userPassword)){
-                        edtUserName.setError(null);
-                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                        startActivity(intent);
-                    }else{
-                        edtPassWord.setError("invalid credential");
-                        edtPassWord.requestFocus();
-
+                        if(passwordFromDB.equals(userPassword)){
+                            // Đăng nhập thành công
+                            edtUserName.setError(null);
+                            //luu lai thong tin user
+                            FULL_NAME = fullName;
+                            EMAIL = email;
+                            USERNAME = userUsername;
+                            PASSWORD = userPassword;
+                            // Truyền dữ liệu sang MainActivity
+                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                            startActivity(intent);
+                        } else {
+                            edtPassWord.setError("Invalid credentials");
+                            edtPassWord.requestFocus();
+                        }
                     }
                 }else {
                     edtUserName.setError("User does no exist");
