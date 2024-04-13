@@ -99,7 +99,7 @@ public class UpdateDeleteActivity extends AppCompatActivity {
                 String pronunciation = edtPhienAm.getText().toString();
                 String meaning = edtNghiaTV.getText().toString();
                 String wordType = spinnerTuLoai.getSelectedItem().toString();
-                String image = "w_president";
+                String image = "w_anhmacdinh";
                 TuVung tuVung = new TuVung(id, word, pronunciation, meaning, wordType, image);
                 tuVungDB.updateWord(id, tuVung) ;
                 Intent intent = new Intent(UpdateDeleteActivity.this, HocTuVungActivity.class);

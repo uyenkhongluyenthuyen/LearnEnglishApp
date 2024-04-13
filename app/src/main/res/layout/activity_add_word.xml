@@ -34,7 +34,7 @@
     </LinearLayout>
     <ImageView
         android:id="@+id/imgAnh"
-        android:src="@drawable/w_president"
+        android:src="@drawable/w_anhmacdinh"
         android:layout_gravity="center"
         android:layout_width="300dp"
         android:layout_height="300dp">
